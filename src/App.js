@@ -20,8 +20,7 @@ class App extends Component {
     firebase.auth().onAuthStateChanged((user) => {
       if (user) {
         this.setState({ loggedIn: true });
-      }
-      else{
+      } else {
         this.setState({ loggedIn: false });
       }
     });
@@ -33,7 +32,7 @@ class App extends Component {
       return (
         <Card>
           <CardSection>
-            <Button>
+            <Button onPress={() => firebase.auth().signOut()}>
               Log Out
               </Button>
           </CardSection>
